@@ -1,0 +1,48 @@
+.card {
+
+}
+
+.card__title {
+  text-align: center;
+}
+
+.card__img-container {
+  float: left;
+
+  overflow: hidden;
+
+  width: 600px;
+  height: 100px;
+
+  margin: 0 auto;
+
+  border: 1px solid #000;
+  border-radius: 3px;
+}
+
+.card__img {
+  display: block;
+
+  min-width: 700px;
+
+  margin: -104px 0 0 -73px;
+}
+
+.card__number {
+
+}
+
+.card__link {
+  float: right;
+
+  display: block;
+
+  width: 120px;
+  height: 30px;
+
+  border: 1px solid black;
+  border-radius: 3px;
+
+  line-height: 30px;
+  text-align: center;
+}

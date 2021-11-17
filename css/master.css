@@ -55,14 +55,25 @@ h1, h2, h3, p, figure {
   overflow: hidden;
 }
 
-.clearfix::after {
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+* html .clearfix       { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+
+/* .clearfix::after {
   content: "";
   display: table;
   clear: both;
-}
+} */
 
 .fixed-container {
-  max-width: 1024px;
+  max-width: 768px;
   margin: 0 auto;
 }
 
