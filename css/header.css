@@ -1,0 +1,11 @@
+.header {
+  padding: 5px 20px;
+}
+
+.header__title {
+  float: left;
+}
+
+.header__nav {
+  float: right;
+}

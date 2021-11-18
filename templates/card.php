@@ -1,5 +1,5 @@
 <main class="card">
-    <h1 class="card__title">Програмирование карт</h1>
+    <h2 class="card__title">Програмирование карт</h2>
 
     <div class="card__inner clearfix">
         <div class="card__img-container">
@@ -14,4 +14,4 @@
     </div>
 
     <span class="card__number"><?=substr($file[2], 0, 10)?></span>
- </main>    
+ </main>

@@ -13,6 +13,7 @@
 
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/master.css">
+    <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/menu.css">
     <link rel="stylesheet" href="/css/card.css">
 
@@ -25,6 +26,12 @@
   </head>
 
   <body>
-    <?php showMenu($menu, 'sort', SORT_ASC, 'menu')?>
+    <div class="header clearfix">
+        <h1 class="header__title"><?=getTitle($menu)?></h1>
+
+        <div class="header__nav">
+            <?php showMenu($menu, 'sort', SORT_ASC, 'menu')?>
+        </div>
+    </div>
 
     <div class="fixed-container">

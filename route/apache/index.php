@@ -1,9 +1,19 @@
+<?php
+    require $_SERVER['DOCUMENT_ROOT'] . '/src/core.php';
+?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Apache2 Debian Default Page: It works</title>
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/master.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/menu.css">
+    <link rel="stylesheet" href="/css/card.css">
+
     <style type="text/css" media="screen">
   * {
     margin: 0px 0px 0px 0px;
@@ -186,6 +196,14 @@
     </style>
   </head>
   <body>
+      <div class="header clearfix">
+          <h1 class="header__title"><?=getTitle($menu)?></h1>
+
+          <div class="header__nav">
+              <?php showMenu($menu, 'sort', SORT_ASC, 'menu')?>
+          </div>
+      </div>
+
     <div class="main_page">
       <div class="page_header floating_element">
         <img src="/icons/openlogo-75.png" alt="Debian Logo" class="floating_element"/>
@@ -220,7 +238,7 @@
         </div>
         <div class="content_section_text">
           <p>
-                This is the default welcome page used to test the correct 
+                This is the default welcome page used to test the correct
                 operation of the Apache2 server after installation on Debian systems.
                 If you can read this page, it means that the Apache HTTP server installed at
                 this site is working properly. You should <b>replace this file</b> (located at
@@ -365,4 +383,3 @@
     </div>
   </body>
 </html>
-
