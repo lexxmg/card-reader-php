@@ -1,0 +1,22 @@
+.menu {
+
+}
+
+.menu li {
+  display: inline-block;
+
+  padding: 3px 5px;
+
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+
+  letter-spacing: normal;
+}
+
+.menu li a {
+
+}
+
+.active {
+  color: green;
+}

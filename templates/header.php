@@ -11,17 +11,20 @@
 
     <title>Пропуска</title>
 
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/master.css">
-    <link rel="stylesheet" href="css/card.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/master.css">
+    <link rel="stylesheet" href="/css/menu.css">
+    <link rel="stylesheet" href="/css/card.css">
 
-    <link rel="stylesheet" href="lib/slick/slick-theme.css">
-    <link rel="stylesheet" href="lib/slick/slick.css">
+    <link rel="stylesheet" href="/lib/slick/slick-theme.css">
+    <link rel="stylesheet" href="/lib/slick/slick.css">
 
-    <script src="lib/jQuery/jquery-3.5.1.min.js" defer></script>
-    <script src="lib/slick/slick.min.js" defer></script>
-    <script src="js/script.js" defer></script>
+    <script src="/lib/jQuery/jquery-3.5.1.min.js" defer></script>
+    <script src="/lib/slick/slick.min.js" defer></script>
+    <script src="/js/script.js" defer></script>
   </head>
 
   <body>
+    <?php showMenu($menu, 'sort', SORT_ASC, 'menu')?>
+
     <div class="fixed-container">

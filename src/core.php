@@ -1,5 +1,8 @@
 <?php
 
+require $_SERVER['DOCUMENT_ROOT'] . '/src/main_menu.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/src/functions.php';
+
 $pathResult = $_SERVER['DOCUMENT_ROOT'] . '/upload/result.txt';
 
 $file = file($pathResult);
