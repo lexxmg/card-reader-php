@@ -94,3 +94,44 @@ function isCurrentUrl(string $url): bool
 {
     return parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH) === $url;
 }
+
+/**
+* Создает каталог
+* Возвращает путь до созданного каталога
+* createDir('upload')
+*/
+function createDir(string $dirName)
+{
+    $path = $_SERVER['DOCUMENT_ROOT'] . "/$dirName";
+
+    if ( is_dir($path) ) {
+        return $path;
+    } else {
+        return mkdir($path) ? $path : false;
+    }
+}
+
+/**
+* Создаёт запись в файле, принимает масссив
+*
+*/
+function setStorage(array $array): bool
+{
+    $path = $_SERVER['DOCUMENT_ROOT'] . '/storage/storage.json';
+    return file_put_contents( $path, json_encode($array) ) ? true : false;
+}
+
+/**
+* Читает из файла JSON, возвращает масссив или false
+* getStorage($_SERVER['DOCUMENT_ROOT'] . '/storage')
+*/
+function getStorage()
+{
+    if ( is_file($_SERVER['DOCUMENT_ROOT'] . '/storage/storage.json') ) {
+        $pathFile = $_SERVER['DOCUMENT_ROOT'] . '/storage/storage.json';
+    } else {
+        return false;
+    }
+
+    return json_decode(file_get_contents($pathFile), true);
+}

@@ -20,3 +20,34 @@ if ( isset($_GET['delete']) ) {
     header('Location: /');
     exit();
 }
+
+if ( isset($_GET['init']) ) {
+    var_dump( createDir('upload') );
+    var_dump( createDir('storage') );
+    var_dump( setStorage($arr = ['count' => 0]) );
+}
+
+if ( isset($_GET['rotate']) ) {
+    $rotate = $_GET['rotate'];
+    $count = getStorage()['count'];
+
+    if ($rotate === 'right') {
+        setStorage($arr = ['count' => $count + 1]);
+
+        if ($count >= 4) {
+            setStorage($arr = ['count' => 0]);
+        }
+
+        echo shell_exec($_SERVER['DOCUMENT_ROOT'] . '/bash/right.sh');
+    }
+
+    if ($rotate === 'left') {
+        setStorage($arr = ['count' => $count - 1]);
+
+        if ($count <= -4) {
+            setStorage($arr = ['count' => 0]);
+        }
+
+        shell_exec('python ' . $_SERVER['DOCUMENT_ROOT'] . '/python/left.py');
+    }
+}
