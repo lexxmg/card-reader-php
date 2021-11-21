@@ -6,7 +6,9 @@
   tesseract --version
   sudo apt-get install apache2
   apache2 -version
-  sudo apt-get install php7.3-fpm php7.3-cli php7.3-curl php7.3-gd php7.3-cgi
+  sudo apt-get install php libapache2-mod-php
+  sudo apt-get install php7.4-gd
+  ###sudo apt-get install php7.3-fpm php7.3-cli php7.3-curl php7.3-gd php7.3-cgi
 
 
 использовать:

@@ -3,7 +3,7 @@
 
     <div class="card__inner clearfix">
         <div class="card__img-container">
-            <img class="card__img" src="/img/num.png" alt="карточка">
+            <img class="card__img" src="/upload/result.png" alt="карточка">
         </div>
 
         <?php if ( file_exists($pathResult) ): ?>
@@ -14,4 +14,6 @@
     </div>
 
     <span class="card__number"><?=substr($file[2], 0, 10)?></span>
+
+    <img src="../img/card.png" alt="" class="card__img-full">
  </main>

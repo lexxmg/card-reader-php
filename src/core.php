@@ -4,6 +4,11 @@ require $_SERVER['DOCUMENT_ROOT'] . '/src/main_menu.php';
 require $_SERVER['DOCUMENT_ROOT'] . '/src/functions.php';
 
 $pathResult = $_SERVER['DOCUMENT_ROOT'] . '/upload/result.txt';
+$pathImage = $_SERVER['DOCUMENT_ROOT'] . '/img/card.png';
+$pathCutImage = $_SERVER['DOCUMENT_ROOT'] . '/upload/result.png';
+
+//var_dump(imagecreatefrompng($_SERVER['DOCUMENT_ROOT'] . '/img/card.png'));
+image_crop($pathImage, $pathCutImage, 445, 570, 650, 190);
 
 $file = file($pathResult);
 
