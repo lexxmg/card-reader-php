@@ -3,6 +3,7 @@
 установить:
   sudo apt-get update
   sudo apt-get install -y tesseract-ocr
+  ###sudo apt install ocrfeeder tesseract-ocr-rus
   tesseract --version
   sudo apt-get install apache2
   apache2 -version
@@ -10,10 +11,16 @@
   sudo apt-get install php7.4-gd
   ###sudo apt-get install php7.3-fpm php7.3-cli php7.3-curl php7.3-gd php7.3-cgi
 
+Добваить в конфиг:
+  sudo nano /etc/sudoers
+  добавить строку:
+    www-data ALL=(ALL) NOPASSWD:ALL
+
 
 использовать:
   tesseract --dpi 300 /var/www/html/upload/num.png /tmp/result   # запишит результат в  /var/www/html/upload/result.txt
   tesseract --dpi 300 /var/www/html/upload/num.png stdout        # выведет результат в терминал
+  tesseract -l rus  --dpi 300 --psm 6 /var/www/html/upload/result.png stdout  # выведет результат в терминал
 
 присвоить права:
   sudo chmod +x /var/www/html/bash/reade.sh

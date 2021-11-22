@@ -27,15 +27,15 @@
 .card__img {
   display: block;
 
-  min-width: 700px;
+  /* min-width: 700px; */
 
-  margin: -104px 0 0 -73px;
+  /* margin: -104px 0 0 -73px; */
 }
 
 .card__number {
   display: block;
 
-  margin: 5px 0 0 32px;
+  margin: 5px 0 0 17px;
 
   font-size: 42px;
 

@@ -8,9 +8,10 @@ $pathImage = $_SERVER['DOCUMENT_ROOT'] . '/img/card.png';
 $pathCutImage = $_SERVER['DOCUMENT_ROOT'] . '/upload/result.png';
 
 //var_dump(imagecreatefrompng($_SERVER['DOCUMENT_ROOT'] . '/img/card.png'));
-image_crop($pathImage, $pathCutImage, 445, 570, 650, 190);
+image_crop($pathImage, $pathCutImage, 2615, 1638, 600, 100);
 
 $file = file($pathResult);
+//var_dump($file[0]);
 
 if ( isset($_GET['read']) ) {
     shell_exec($_SERVER['DOCUMENT_ROOT'] . '/bash/reade.sh');
@@ -43,7 +44,7 @@ if ( isset($_GET['rotate']) ) {
             setStorage($arr = ['count' => 0]);
         }
 
-        echo shell_exec($_SERVER['DOCUMENT_ROOT'] . '/bash/right.sh');
+        var_dump( shell_exec('sudo python ' . $_SERVER['DOCUMENT_ROOT'] . '/python/right.py') );
     }
 
     if ($rotate === 'left') {
@@ -53,6 +54,6 @@ if ( isset($_GET['rotate']) ) {
             setStorage($arr = ['count' => 0]);
         }
 
-        shell_exec('python ' . $_SERVER['DOCUMENT_ROOT'] . '/python/left.py');
+        var_dump( shell_exec('sudo python ' . $_SERVER['DOCUMENT_ROOT'] . '/python/left.py') );
     }
 }

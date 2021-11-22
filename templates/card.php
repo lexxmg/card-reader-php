@@ -13,7 +13,7 @@
         <?php endif; ?>
     </div>
 
-    <span class="card__number"><?=substr($file[2], 0, 10)?></span>
+    <span class="card__number"><?=substr($file[0], 0, 10)?></span>
 
     <img src="../img/card.png" alt="" class="card__img-full">
  </main>
