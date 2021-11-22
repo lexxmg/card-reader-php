@@ -8,13 +8,20 @@ $pathImage = $_SERVER['DOCUMENT_ROOT'] . '/img/card.png';
 $pathCutImage = $_SERVER['DOCUMENT_ROOT'] . '/upload/result.png';
 
 //var_dump(imagecreatefrompng($_SERVER['DOCUMENT_ROOT'] . '/img/card.png'));
-image_crop($pathImage, $pathCutImage, 2615, 1638, 600, 100);
+
 
 $file = file($pathResult);
 //var_dump($file[0]);
 
 if ( isset($_GET['read']) ) {
     shell_exec($_SERVER['DOCUMENT_ROOT'] . '/bash/reade.sh');
+
+    header('Location: /');
+    exit();
+}
+
+if ( isset($_GET['cut']) ) {
+    image_crop($pathImage, $pathCutImage, 2615, 1638, 600, 100);
 
     header('Location: /');
     exit();
@@ -35,23 +42,30 @@ if ( isset($_GET['init']) ) {
 
 if ( isset($_GET['rotate']) ) {
     $rotate = $_GET['rotate'];
-    $count = getStorage()['count'];
+    $storage = getStorage();
 
     if ($rotate === 'right') {
-        setStorage($arr = ['count' => $count + 1]);
+        $storage['step'] = $storage['step'] + 1;
 
-        if ($count >= 4) {
-            setStorage($arr = ['count' => 0]);
+        setStorage($storage);
+
+        if ($storage['step'] >= 4) {
+            $storage['step'] = 0;
+            $storage['count'] = $storage['count'] - 1;
+            setStorage($storage);
         }
 
         var_dump( shell_exec('sudo python ' . $_SERVER['DOCUMENT_ROOT'] . '/python/right.py') );
     }
 
     if ($rotate === 'left') {
-        setStorage($arr = ['count' => $count - 1]);
+        $storage['step'] = $storage['step'] - 1;
 
-        if ($count <= -4) {
-            setStorage($arr = ['count' => 0]);
+        setStorage($storage);
+
+        if ($storage['step'] <= -4) {
+            $storage['step'] = 0;
+            setStorage($storage);
         }
 
         var_dump( shell_exec('sudo python ' . $_SERVER['DOCUMENT_ROOT'] . '/python/left.py') );

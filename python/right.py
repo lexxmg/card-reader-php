@@ -11,7 +11,7 @@ try:
 
     GPIO.setup([pinLED1, pinLED2], GPIO.OUT, initial=0)     # Пины со светодиодом в режим OUTPUT, выключены
 
-    time.sleep(10)
+    time.sleep(2)
 except KeyboardInterrupt:
     # ...
     print("Exit pressed Ctrl+C")                # Выход из программы по нажатию Ctrl+C

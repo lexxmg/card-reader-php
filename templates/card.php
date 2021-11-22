@@ -11,6 +11,8 @@
         <?php else: ?>
             <a href="/?read=yes" class="card__link">Распознать</a>
         <?php endif; ?>
+
+        <a href="/?cut=yes" class="card__link">Обрезать</a>
     </div>
 
     <span class="card__number"><?=substr($file[0], 0, 10)?></span>
