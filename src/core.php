@@ -49,7 +49,7 @@ if ( isset($_GET['rotate']) ) {
 
         setStorage($storage);
 
-        if ($storage['step'] >= 4) {
+        if ($storage['step'] > 4) {
             $storage['step'] = 0;
             $storage['count'] = $storage['count'] - 1;
             setStorage($storage);
@@ -63,7 +63,7 @@ if ( isset($_GET['rotate']) ) {
 
         setStorage($storage);
 
-        if ($storage['step'] <= -4) {
+        if ($storage['step'] < -4) {
             $storage['step'] = 0;
             setStorage($storage);
         }
