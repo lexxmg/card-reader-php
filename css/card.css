@@ -6,6 +6,50 @@
   text-align: center;
 }
 
+.card__info {
+  margin: 10px 0 0 0;
+}
+
+.card-info {
+
+}
+
+.card-info__count {
+  float: left;
+
+  width: 110px;
+}
+
+.card-info__label-count {
+  float: left;
+  display: block;
+}
+
+.card-info__count-cards {
+  float: right;
+  display: block;
+}
+
+.card__current-task {
+  float: right;
+}
+
+.card-info__form {
+
+}
+
+.card-info__label {
+
+}
+
+.card-info__input {
+  width: 40px;
+}
+
+.card-info__submit {
+
+}
+
 .card__inner {
   margin: 20px 0 0 0;
 }
@@ -57,4 +101,10 @@
 
   line-height: 30px;
   text-align: center;
+}
+
+.card--warning {
+  font-weight: bold;
+
+  color: #da5600;
 }

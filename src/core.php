@@ -9,9 +9,17 @@ $pathCutImage = $_SERVER['DOCUMENT_ROOT'] . '/upload/result.png';
 
 //var_dump(imagecreatefrompng($_SERVER['DOCUMENT_ROOT'] . '/img/card.png'));
 
-
+$storage = getStorage();
 $file = file($pathResult);
 //var_dump($file[0]);
+
+if ( isset($_POST['currentTask']) ) {
+  $currentCount = $_POST['currentTaskCount'];
+
+  $storage['currentCount'] = $currentCount;
+
+  setStorage($storage);
+}
 
 if ( isset($_GET['read']) ) {
     shell_exec($_SERVER['DOCUMENT_ROOT'] . '/bash/reade.sh');
@@ -37,12 +45,11 @@ if ( isset($_GET['delete']) ) {
 if ( isset($_GET['init']) ) {
     var_dump( createDir('upload') );
     var_dump( createDir('storage') );
-    var_dump( setStorage($arr = ['count' => 0]) );
+    var_dump( setStorage($arr = ['step' => 0]) );
 }
 
 if ( isset($_GET['rotate']) ) {
     $rotate = $_GET['rotate'];
-    $storage = getStorage();
 
     if ($rotate === 'right') {
         $storage['step'] = $storage['step'] + 1;
@@ -52,6 +59,8 @@ if ( isset($_GET['rotate']) ) {
         if ($storage['step'] > 4) {
             $storage['step'] = 0;
             $storage['count'] = $storage['count'] - 1;
+            $storage['currentCount'] = $storage['currentCount'] - 1;
+
             setStorage($storage);
         }
 

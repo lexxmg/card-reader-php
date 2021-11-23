@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/menu.css">
     <link rel="stylesheet" href="/css/card.css">
+    <link rel="stylesheet" href="/css/settings.css">
 
     <link rel="stylesheet" href="/lib/slick/slick-theme.css">
     <link rel="stylesheet" href="/lib/slick/slick.css">
