@@ -153,3 +153,13 @@ function rotateMotor(string $direction = 'right'): string
         return shell_exec("sudo python $path/left.py");
     }
 }
+
+/**
+* Склонение
+* declOfNum($cards, ['1карта', '3карты', '5карт'])
+*/
+function declOfNum($number, $titles = [])
+{
+    $cases = [2, 0, 1, 1, 1, 2];
+    return $titles[ ($number % 100 > 4 && $number % 100 < 20) ? 2 : $cases[ ($number % 10 < 5) ? $number % 10 : 5 ] ];
+}

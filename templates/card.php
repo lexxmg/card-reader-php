@@ -8,13 +8,20 @@
       </div>
 
       <div class="card__current-task clearfix">
-        <form class="card-info__form" method="post">
-          <label class="card-info__label">Текущие задание:
-            <input class="card-info__input" type="number" name="currentTaskCount" value="<?=$storage['currentCount'] ?? ''?>">
-          </label>
+          <?php if ($storage['currentCount'] <= 0): ?>
+              <form class="card-info__form" method="post">
+                <label class="card-info__label">Текущие задание:
+                  <input class="card-info__input" type="number" name="currentTaskCount" value="<?=$storage['currentCount'] ?? ''?>">
+                </label>
 
-          <button class="card-info__submit" name="currentTask">Изменить</button>
-        </form>
+                <button class="card-info__submit" name="currentTask">Изменить</button>
+              </form>
+          <?php else: ?>
+              <span class="card__text-task">Осталось сделать:</span>
+              <span class="card__count-task"><?=$storage['currentCount'] ?? ''?></span>
+              <span class="card__text-task"><?=declOfNum($storage['currentCount'] ?? 0, ['карту', 'карты', 'карт'])?></span>
+          <?php endif; ?>
+
       </div>
     </div>
 
