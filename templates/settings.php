@@ -8,3 +8,9 @@
 
 <a href="?rotate=left">В лево</a>
 <a href="?rotate=right">В право</a>
+<br>
+<a href="?card_read=read">Считать карту</a>
+<br>
+<a href="?card_read=test">Проверить</a>
+<br>
+<a href="?card_read=end">Готово</a>

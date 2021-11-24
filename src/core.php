@@ -64,7 +64,7 @@ if ( isset($_GET['rotate']) ) {
             setStorage($storage);
         }
 
-        var_dump( shell_exec('sudo python ' . $_SERVER['DOCUMENT_ROOT'] . '/python/right.py') );
+        var_dump( rotateMotor('right') );
     }
 
     if ($rotate === 'left') {
@@ -77,6 +77,42 @@ if ( isset($_GET['rotate']) ) {
             setStorage($storage);
         }
 
-        var_dump( shell_exec('sudo python ' . $_SERVER['DOCUMENT_ROOT'] . '/python/left.py') );
+        var_dump( rotateMotor('left') );
+    }
+}
+
+if ( isset($_GET['card_read']) ) {
+    $cardReaed = $_GET['card_read'];
+
+    if ($cardReaed === 'read' && $storage['step'] === 0) {
+        rotateMotor('right');
+        $storage['step'] = $storage['step'] + 1;
+        sleep(1);
+        rotateMotor('right');
+        $storage['step'] = $storage['step'] + 1;
+        setStorage($storage);
+    }
+
+    if ($cardReaed === 'test' && $storage['step'] === 2) {
+        rotateMotor('left');
+        $storage['step'] = $storage['step'] - 1;
+        sleep(1);
+        rotateMotor('right');
+        $storage['step'] = $storage['step'] + 1;
+        setStorage($storage);
+    }
+
+    if ($cardReaed === 'end' && $storage['step'] === 2) {
+        rotateMotor('right');
+        $storage['step'] = $storage['step'] + 1;
+        sleep(1);
+        rotateMotor('right');
+        $storage['step'] = $storage['step'] + 1;
+        sleep(1);
+        rotateMotor('right');
+        $storage['step'] = 0;
+        $storage['count'] = $storage['count'] - 1;
+        $storage['currentCount'] = $storage['currentCount'] - 1;
+        setStorage($storage);
     }
 }

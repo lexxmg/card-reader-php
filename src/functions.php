@@ -135,3 +135,21 @@ function getStorage()
 
     return json_decode(file_get_contents($pathFile), true);
 }
+
+/**
+* Управление GPIO
+* rotateMotor('right') Вращение в право
+* rotateMotor('left') Вращение в лево
+*/
+function rotateMotor(string $direction = 'right'): string
+{
+    $path = $_SERVER['DOCUMENT_ROOT'] . '/python';
+
+    if ($direction === 'right') {
+        return shell_exec("sudo python $path/right.py");
+    }
+
+    if ($direction === 'left') {
+        return shell_exec("sudo python $path/left.py");
+    }
+}
