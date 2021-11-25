@@ -17,7 +17,7 @@ try:
     GPIO.output(motor2, 1)
     print("Вращение в право -> ")
 
-    time.sleep(2)
+    time.sleep(0.208625)
     #GPIO.wait_for_edge(irStop, GPIO.FALLING) # Добавляем детектирование события - нажатие кнопки
 
     GPIO.output(motor1, 1)
