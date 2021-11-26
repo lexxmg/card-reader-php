@@ -4,6 +4,7 @@
 
     if ( isset($_POST['addCardSubmit']) ) {
         $storage['count'] = $allCard + $addCard;
+
         setStorage($storage);
     }
 ?>

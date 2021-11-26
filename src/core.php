@@ -43,9 +43,20 @@ if ( isset($_GET['delete']) ) {
 }
 
 if ( isset($_GET['init']) ) {
+    $pathURI = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+
+    $storage = [
+        'step' => 0,
+        'currentCount' => 0,
+        'count' => 0
+    ];
+
     var_dump( createDir('upload') );
     var_dump( createDir('storage') );
-    var_dump( setStorage($arr = ['step' => 0]) );
+    var_dump( setStorage($storage) );
+
+    header("Location: $pathURI");
+    exit();
 }
 
 if ( isset($_GET['rotate']) ) {
@@ -56,7 +67,7 @@ if ( isset($_GET['rotate']) ) {
 
         setStorage($storage);
 
-        if ($storage['step'] > 7) {
+        if ($storage['step'] > 3) {
             $storage['step'] = 0;
             $storage['count'] = $storage['count'] - 1;
             $storage['currentCount'] = $storage['currentCount'] - 1;
@@ -72,7 +83,7 @@ if ( isset($_GET['rotate']) ) {
 
         setStorage($storage);
 
-        if ($storage['step'] < -7) {
+        if ($storage['step'] < -3) {
             $storage['step'] = 0;
             setStorage($storage);
         }
@@ -87,40 +98,29 @@ if ( isset($_GET['card_read']) ) {
     if ($cardReaed === 'read' && $storage['step'] === 0) {
         rotateMotor('right');
         $storage['step'] = $storage['step'] + 1;
-        rotateMotor('right');
-        $storage['step'] = $storage['step'] + 1;
         sleep(1);
         rotateMotor('right');
         $storage['step'] = $storage['step'] + 1;
-        rotateMotor('right');
-        $storage['step'] = $storage['step'] + 1;
+
         setStorage($storage);
     }
 
-    if ($cardReaed === 'test' && $storage['step'] === 4) {
-        rotateMotor('left');
-        $storage['step'] = $storage['step'] - 1;
+    if ($cardReaed === 'test' && $storage['step'] === 2) {
         rotateMotor('left');
         $storage['step'] = $storage['step'] - 1;
         sleep(1);
         rotateMotor('right');
         $storage['step'] = $storage['step'] + 1;
-        rotateMotor('right');
-        $storage['step'] = $storage['step'] + 1;
-        setStorage($storage);
 
+        setStorage($storage);
     }
 
-    if ($cardReaed === 'end' && $storage['step'] === 4) {
-        rotateMotor('right');
-        $storage['step'] = $storage['step'] + 1;
-        rotateMotor('right');
-        $storage['step'] = $storage['step'] + 1;
-        sleep(1);
+    if ($cardReaed === 'end' && $storage['step'] === 2) {
         rotateMotor('right');
         $storage['step'] = $storage['step'] + 1;
         sleep(1);
         rotateMotor('right');
+
         $storage['step'] = 0;
         $storage['count'] = $storage['count'] - 1;
         $storage['currentCount'] = $storage['currentCount'] - 1;
