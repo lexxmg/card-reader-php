@@ -152,6 +152,18 @@ function rotateMotor(string $direction = 'right'): string
     if ($direction === 'left') {
         return shell_exec("sudo python $path/left.py");
     }
+
+    if ($direction === 'end') {
+        return shell_exec("sudo python $path/end.py");
+    }
+
+    if ($direction === 'read') {
+        return shell_exec("sudo python $path/read.py");
+    }
+
+    if ($direction === 'test') {
+        return shell_exec("sudo python $path/test.py");
+    }
 }
 
 /**

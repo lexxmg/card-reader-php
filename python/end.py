@@ -37,6 +37,22 @@ try:
     time.sleep(0.1)
     print("Стоп -> ")
 
+    time.sleep(.5)
+
+    GPIO.output(motor1, 0)
+    GPIO.output(motor2, 1)
+    print("Вращение в право -> ")
+
+    time.sleep(0.2)
+    pwm.ChangeDutyCycle(30)      # Изменяем скважность до 50%
+    GPIO.wait_for_edge(irStop, GPIO.RISING) # Добавляем детектирование события - нажатие кнопки
+    #time.sleep(0.208625)
+
+    GPIO.output(motor1, 1)
+    GPIO.output(motor2, 1)
+    time.sleep(0.1)
+    print("Стоп -> ")
+
 except KeyboardInterrupt:
     # ...
     print("Exit pressed Ctrl+C")                # Выход из программы по нажатию Ctrl+C

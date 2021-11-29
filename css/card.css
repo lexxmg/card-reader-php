@@ -84,6 +84,10 @@
   /* margin: -104px 0 0 -73px; */
 }
 
+.card__btn-container {
+  float: right;
+}
+
 .card__number {
   display: block;
 
@@ -95,24 +99,24 @@
 }
 
 .card__link {
-  float: right;
-
-  display: block;
-
-  width: 120px;
-  height: 30px;
-
   margin: 0 0 10px 0;
-
-  border: 1px solid black;
-  border-radius: 3px;
-
-  line-height: 30px;
-  text-align: center;
 }
 
 .card--warning {
   font-weight: bold;
 
   color: #da5600;
+}
+
+.card-btn {
+  display: block;
+
+  width: 120px;
+  height: 30px;
+
+  border: 1px solid black;
+  border-radius: 3px;
+
+  line-height: 30px;
+  text-align: center;
 }

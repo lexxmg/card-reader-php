@@ -96,30 +96,18 @@ if ( isset($_GET['card_read']) ) {
     $cardReaed = $_GET['card_read'];
 
     if ($cardReaed === 'read' && $storage['step'] === 0) {
-        rotateMotor('right');
-        $storage['step'] = $storage['step'] + 1;
-        sleep(1);
-        rotateMotor('right');
-        $storage['step'] = $storage['step'] + 1;
+        rotateMotor('read');
+        $storage['step'] = $storage['step'] + 2;
 
         setStorage($storage);
     }
 
     if ($cardReaed === 'test' && $storage['step'] === 2) {
-        rotateMotor('left');
-        $storage['step'] = $storage['step'] - 1;
-        sleep(1);
-        rotateMotor('right');
-        $storage['step'] = $storage['step'] + 1;
-
-        setStorage($storage);
+        rotateMotor('test');
     }
 
     if ($cardReaed === 'end' && $storage['step'] === 2) {
-        rotateMotor('right');
-        $storage['step'] = $storage['step'] + 1;
-        sleep(1);
-        rotateMotor('right');
+        rotateMotor('end');
 
         $storage['step'] = 0;
         $storage['count'] = $storage['count'] - 1;

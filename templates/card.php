@@ -30,13 +30,24 @@
             <img class="card__img" src="/upload/result.png" alt="карточка">
         </div>
 
-        <?php if ( file_exists($pathResult) ): ?>
-            <a href="/?delete=yes" class="card__link">Удалить</a>
-        <?php else: ?>
-            <a href="/?read=yes" class="card__link">Распознать</a>
-        <?php endif; ?>
+        <div class="card__btn-container">
+          <?php if ( file_exists($pathResult) ): ?>
+              <a href="/?delete=yes" class="card__link card-btn">Удалить</a>
+          <?php else: ?>
+              <a href="/?read=yes" class="card__link card-btn">Распознать</a>
+          <?php endif; ?>
 
-        <a href="/?cut=yes" class="card__link">Обрезать</a>
+          <a href="/?cut=yes" class="card__link card-btn">Обрезать</a>
+        </div>
+
+        <div class="card__btn-container">
+          <?php if ($storage['step'] === 0): ?>
+            <a class="card__link card-btn" href="?card_read=read">Считать карту</a>
+          <?php else: ?>
+            <a class="card__link card-btn" href="?card_read=test">Проверить</a>
+            <a class="card__link card-btn" href="?card_read=end">Готово</a>
+          <?php endif; ?>
+        </div>
     </div>
 
     <span class="card__number"><?=substr($file[0], 0, 10)?></span>

@@ -22,10 +22,25 @@ try:
 
     #pwm.ChangeFrequency(1000)   # Изменяем частоту до 1000 Гц (также можно float)
 
+    GPIO.output(motor1, 1)
+    GPIO.output(motor2, 0)
+    print("Вращение в лево -> ")
 
+    time.sleep(0.35)
+    pwm.ChangeDutyCycle(30)      # Изменяем скважность до 50%
+    GPIO.wait_for_edge(irStop, GPIO.RISING) # Добавляем детектирование события - нажатие кнопки
+    #time.sleep(0.208625)
+
+    GPIO.output(motor1, 1)
+    GPIO.output(motor2, 1)
+    print("Стоп -> ")
+
+    time.sleep(0.5)
+
+    pwm.ChangeDutyCycle(100)
     GPIO.output(motor1, 0)
     GPIO.output(motor2, 1)
-    print("Вращение в право -> ")
+    print("Вращение в вправо -> ")
 
     time.sleep(0.35)
     pwm.ChangeDutyCycle(30)      # Изменяем скважность до 50%
