@@ -2,6 +2,13 @@ import RPi.GPIO as GPIO                 # Импортируем библиот�
 import time                             # Импортируем класс для работы со временем
 import sys, traceback                   # Импортируем библиотеки для обработки исключений
 
+# GPIO.IN = 1
+# GPIO.OUT = 0
+# GPIO.SPI = 41
+# GPIO.I2C = 42
+# GPIO.HARD_PWM = 43
+# GPIO.SERIAL = 40
+# GPIO.UNKNOWN = -1
 
 try:
     # === Инициализация пинов ===
@@ -12,10 +19,16 @@ try:
     DIR = 20 # pin 38
     STEP = 21 # pin 40
 
-    delay = 0.0015
+    delay = 0.0015   # 0.0857
     step_count = 1000
 
-    GPIO.setup([DIR, STEP], GPIO.OUT, initial=0)     # Пины со светодиодом в режим OUTPUT, выключены
+    if GPIO.gpio_function(DIR) ==  GPIO.UNKNOWN:
+        GPIO.setup(DIR, GPIO.OUT, initial=0)
+
+    if GPIO.gpio_function(STEP) ==  GPIO.UNKNOWN:
+        GPIO.setup(STEP, GPIO.OUT, initial=0)
+
+    #GPIO.setup([DIR, STEP], GPIO.OUT, initial=0)     # Пины со светодиодом в режим OUTPUT, выключены
     #GPIO.setup(irStop, GPIO.IN, pull_up_down=GPIO.PUD_UP)   # Кнопку в режим INPUT, к нулю с подтяжкой к единице
 
     print("Вращение в лево -> ")
