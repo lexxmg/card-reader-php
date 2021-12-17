@@ -14,7 +14,7 @@ try:
     # === Инициализация пинов ===
     GPIO.setmode(GPIO.BCM)
 
-    #irStop=12 # pin 32
+    irStop=12 # pin 32
     #pinPWM=16 # pin 36
     EN = 4   # pin 7
     DIR = 20 # pin 38
@@ -33,7 +33,7 @@ try:
 
     #GPIO.setup([DIR, STEP], GPIO.OUT, initial=0)     # Пины со светодиодом в режим OUTPUT, выключены
     #GPIO.setup(irStop, GPIO.IN, pull_up_down=GPIO.PUD_UP)   # Кнопку в режим INPUT, к нулю с подтяжкой к единице
-
+    GPIO.setup(irStop, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
     print("Вращение в лево -> ")
     for x in range(step_count):
@@ -43,7 +43,7 @@ try:
         time.sleep(delay)
         #print(x)
 
-    time.sleep(2)
+    GPIO.wait_for_edge(irStop, GPIO.RISING)
 
     print("Вращение в право -> ")
     GPIO.output(DIR, GPIO.HIGH)

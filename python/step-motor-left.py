@@ -15,7 +15,7 @@ try:
     # === Инициализация пинов ===
     GPIO.setmode(GPIO.BCM)
 
-    #irStop=12 # pin 32
+    irStop=12 # pin 32
     #pinPWM=16 # pin 36
     EN = 4   # pin 7
     DIR = 20 # pin 38
@@ -69,6 +69,7 @@ try:
         time.sleep(delay)
         GPIO.output(STEP, GPIO.LOW)
         time.sleep(delay)
+
 
     print("Вращение в лево -> ")
     for x in range(step_count):
