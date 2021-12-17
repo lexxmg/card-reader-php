@@ -1,6 +1,7 @@
 import RPi.GPIO as GPIO                 # Импортируем библиотеку по работе с GPIO
 import time                             # Импортируем класс для работы со временем
 import sys, traceback                   # Импортируем библиотеки для обработки исключений
+import math
 
 # GPIO.IN = 1
 # GPIO.OUT = 0
@@ -20,8 +21,8 @@ try:
     DIR = 20 # pin 38
     STEP = 21 # pin 40
 
-    delay = 0.0002 / 4 # 0.0857
-    step_count = 5960 * 4
+    delay = 0.0005 / 4 # 0.0857
+    step_count = math.floor( (5960 * 4) / 4 )
 
     GPIO.setup(EN, GPIO.OUT, initial=0)
 
@@ -36,24 +37,47 @@ try:
 
 
     print("Вращение в лево -> ")
-    for x in range(step_count):
+    for x in range( math.floor(step_count / 2) ):
         GPIO.output(STEP, GPIO.HIGH)
         time.sleep(delay)
         GPIO.output(STEP, GPIO.LOW)
         time.sleep(delay)
-        #print(x)
 
     time.sleep(2)
 
-    print("Вращение в право -> ")
-    GPIO.output(DIR, GPIO.HIGH)
+    print("Вращение в лево -> ")
+    for x in range( math.floor(step_count / 2) ):
+        GPIO.output(STEP, GPIO.HIGH)
+        time.sleep(delay)
+        GPIO.output(STEP, GPIO.LOW)
+        time.sleep(delay)
 
+    time.sleep(2)
+
+    print("Вращение в лево -> ")
+    for x in range(step_count):
+        GPIO.output(STEP, GPIO.HIGH)
+        time.sleep(delay)
+        GPIO.output(STEP, GPIO.LOW)
+        time.sleep(delay)
+
+    time.sleep(2)
+
+    print("Вращение в лево -> ")
+    for x in range(step_count):
+        GPIO.output(STEP, GPIO.HIGH)
+        time.sleep(delay)
+        GPIO.output(STEP, GPIO.LOW)
+        time.sleep(delay)
+
+    print("Вращение в лево -> ")
     for x in range(step_count):
         GPIO.output(STEP, GPIO.HIGH)
         time.sleep(delay)
         GPIO.output(STEP, GPIO.LOW)
         time.sleep(delay)
         #print(x)
+
 
 except KeyboardInterrupt:
     # ...
