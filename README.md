@@ -28,6 +28,11 @@
   sudo chmod 777 /var/www/html/upload
   sudo chmod 777 /var/www/html/storage
 
+Камера:
+  включить в конфиге:
+    sudo raspi-config
+  использовать:   
+    libcamera-jpeg -o /tmp/test.jpg
 
 
 GPIO:

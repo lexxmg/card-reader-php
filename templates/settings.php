@@ -61,3 +61,5 @@
 <a href="?card_read=test">Проверить</a>
 <br>
 <a href="?card_read=end">Готово</a>
+<br>
+<a href="?card_read=photo">Сделать фото</a>

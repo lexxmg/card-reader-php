@@ -42,6 +42,13 @@ if ( isset($_GET['delete']) ) {
     exit();
 }
 
+if ( isset($_GET['photo']) ) {
+    shell_exec("sudo libcamera-jpeg -o $path/upload/test.jpg");
+
+    //header('Location: /');
+    //exit();
+}
+
 if ( isset($_GET['init']) ) {
     $pathURI = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 

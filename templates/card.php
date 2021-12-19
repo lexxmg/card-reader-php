@@ -52,5 +52,5 @@
 
     <span class="card__number"><?=substr($file[0], 0, 10)?></span>
 
-    <img src="../img/card.png" alt="" class="card__img-full">
+    <img src="/upload/test.jpg" alt="карта-пропуск" class="card__img-full">
  </main>
