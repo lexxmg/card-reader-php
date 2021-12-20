@@ -4,14 +4,14 @@ require $_SERVER['DOCUMENT_ROOT'] . '/src/main_menu.php';
 require $_SERVER['DOCUMENT_ROOT'] . '/src/functions.php';
 
 $pathResult = $_SERVER['DOCUMENT_ROOT'] . '/upload/result.txt';
-$pathImage = $_SERVER['DOCUMENT_ROOT'] . '/img/card.png';
-$pathCutImage = $_SERVER['DOCUMENT_ROOT'] . '/upload/result.png';
+$pathImage = $_SERVER['DOCUMENT_ROOT'] . '/upload/test.jpg';
+$pathCutImage = $_SERVER['DOCUMENT_ROOT'] . '/upload/result.jpg';
 
 //var_dump(imagecreatefrompng($_SERVER['DOCUMENT_ROOT'] . '/img/card.png'));
 
 $storage = getStorage();
 $file = file($pathResult);
-//var_dump($file[0]);
+//var_dump(substr($file[0], 1, 10));
 
 if ( isset($_POST['currentTask']) ) {
   $currentCount = $_POST['currentTaskCount'];
@@ -29,7 +29,7 @@ if ( isset($_GET['read']) ) {
 }
 
 if ( isset($_GET['cut']) ) {
-    image_crop($pathImage, $pathCutImage, 2615, 1638, 600, 100);
+    image_crop($pathImage, $pathCutImage, 1970, 760, 600, 100);
 
     header('Location: /');
     exit();
@@ -43,10 +43,12 @@ if ( isset($_GET['delete']) ) {
 }
 
 if ( isset($_GET['photo']) ) {
-    shell_exec("sudo libcamera-jpeg -o $path/upload/test.jpg");
+    $path = $_SERVER['DOCUMENT_ROOT'];
 
-    //header('Location: /');
-    //exit();
+    shell_exec("sudo libcamera-still -n -o $path/upload/test.jpg --shutter 20000 --immediate");
+
+    header('Location: /');
+    exit();
 }
 
 if ( isset($_GET['init']) ) {
