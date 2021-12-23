@@ -178,9 +178,9 @@ function declOfNum($number, $titles = [])
 
 /**
 * Сделать фото
-* createFoto()
+* createPhoto()
 */
-function createFoto()
+function createPhoto()
 {
     $path = $_SERVER['DOCUMENT_ROOT'] . '/upload/test.jpg';
     $cutImage = $_SERVER['DOCUMENT_ROOT'] . '/upload/result.jpg';
