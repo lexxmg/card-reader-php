@@ -175,3 +175,19 @@ function declOfNum($number, $titles = [])
     $cases = [2, 0, 1, 1, 1, 2];
     return $titles[ ($number % 100 > 4 && $number % 100 < 20) ? 2 : $cases[ ($number % 10 < 5) ? $number % 10 : 5 ] ];
 }
+
+/**
+* Сделать фото
+* createFoto()
+*/
+function createFoto()
+{
+    $path = $_SERVER['DOCUMENT_ROOT'] . '/upload/test.jpg';
+    $cutImage = $_SERVER['DOCUMENT_ROOT'] . '/upload/result.jpg';
+
+    shell_exec("sudo libcamera-still -n -o $path --width 1920 --height 1080 --shutter 20000 --immediate");
+
+    image_crop($path, $cutImage, 1255, 530, 600, 100);
+
+    shell_exec("sudo tesseract -l rus  --dpi 300 --psm 11 $cutImage /var/www/html/upload/result;");
+}

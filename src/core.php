@@ -43,9 +43,11 @@ if ( isset($_GET['delete']) ) {
 }
 
 if ( isset($_GET['photo']) ) {
-    $path = $_SERVER['DOCUMENT_ROOT'];
+    //$path = $_SERVER['DOCUMENT_ROOT'];
 
-    shell_exec("sudo libcamera-still -n -o $path/upload/test.jpg --width 1920 --height 1080 --shutter 20000 --immediate");
+    //shell_exec("sudo libcamera-still -n -o $path/upload/test.jpg --width 1920 --height 1080 --shutter 20000 --immediate");
+
+    createPhoto();
 
     header('Location: /');
     exit();
