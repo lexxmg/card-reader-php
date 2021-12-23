@@ -31,14 +31,6 @@
         </div>
 
         <div class="card__btn-container">
-          <?php if ( file_exists($pathResult) ): ?>
-              <a href="/?delete=yes" class="card__link card-btn">Удалить</a>
-          <?php else: ?>
-              <a href="/?read=yes" class="card__link card-btn">Распознать</a>
-          <?php endif; ?>
-
-          <a href="/?cut=yes" class="card__link card-btn">Обрезать</a>
-
           <a href="/?photo=yes" class="card__link card-btn">Сделать фото</a>
         </div>
 
