@@ -31,7 +31,7 @@
         </div>
 
         <div class="card__btn-container">
-          <a onclick="startPlaceholder()" href="/?photo=yes" class="card__link card-btn">Сделать фото</a>
+          <a onclick="startPlaceholder(); return false" href="/?photo=yes" class="card__link card-btn">Сделать фото</a>
         </div>
 
         <div class="card__btn-container">
