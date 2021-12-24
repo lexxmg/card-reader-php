@@ -27,7 +27,9 @@
   </head>
 
   <body>
-    <div class="placeholder hidden"></div>
+    <div class="placeholder">
+        <img src="/img/placeholder.gif" alt="placeholder" class="placeholder__img">
+    </div>
 
     <div class="header clearfix">
         <h1 class="header__title"><?=getTitle($menu)?></h1>
