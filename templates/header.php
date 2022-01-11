@@ -22,14 +22,10 @@
   </head>
 
   <body>
-<<<<<<< HEAD
-    <div class="placeholder hidden"></div>
-=======
     <div class="placeholder">
         <!-- <img src="/img/placeholder.gif" alt="placeholder" class="placeholder__img"> -->
         <p class="placeholder__text">Подождите...</p>
     </div>
->>>>>>> 02b4ebbaee6f419b72efc1950d08f74a765498d7
 
     <div class="header clearfix">
         <h1 class="header__title"><?=getTitle($menu)?></h1>
