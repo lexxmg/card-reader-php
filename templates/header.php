@@ -27,6 +27,8 @@
   </head>
 
   <body>
+    <div class="placeholder hidden"></div>
+
     <div class="header clearfix">
         <h1 class="header__title"><?=getTitle($menu)?></h1>
 

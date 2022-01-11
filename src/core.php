@@ -29,7 +29,7 @@ if ( isset($_GET['read']) ) {
 }
 
 if ( isset($_GET['cut']) ) {
-    image_crop($pathImage, $pathCutImage, 1255, 530, 600, 100);
+    image_crop($pathImage, $pathCutImage, 1595, 150, 600, 100);
 
     header('Location: /');
     exit();

@@ -190,9 +190,9 @@ function createPhoto()
 
     shell_exec("sudo libcamera-still -n -o $path --width 1920 --height 1080 --shutter 20000 --immediate");
 
-    image_crop($path, $cutImage, 1255, 530, 600, 100);
+    image_crop($path, $cutImage, 1210, 360, 600, 100);
 
-    shell_exec("sudo tesseract -l rus  --dpi 300 --psm 11 $cutImage /var/www/html/upload/result;");
+    shell_exec("sudo tesseract -l rus  --dpi 300 --psm 11 $cutImage /var/www/html/upload/result");
 
     shell_exec("sudo python $pathPynton/light.py off");
 }
