@@ -31,7 +31,11 @@
         </div>
 
         <div class="card__btn-container">
+<<<<<<< HEAD
           <a href="/?photo=yes" class="card__link card-btn">Сделать фото</a>
+=======
+          <a onclick="startPlaceholder(); return false" href="/?photo=yes" class="card__link card-btn">Сделать фото</a>
+>>>>>>> 02b4ebbaee6f419b72efc1950d08f74a765498d7
         </div>
 
         <div class="card__btn-container">

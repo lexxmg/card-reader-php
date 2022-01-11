@@ -18,16 +18,18 @@
     <link rel="stylesheet" href="/css/card.css">
     <link rel="stylesheet" href="/css/settings.css">
 
-    <link rel="stylesheet" href="/lib/slick/slick-theme.css">
-    <link rel="stylesheet" href="/lib/slick/slick.css">
-
-    <script src="/lib/jQuery/jquery-3.5.1.min.js" defer></script>
-    <script src="/lib/slick/slick.min.js" defer></script>
     <script src="/js/script.js" defer></script>
   </head>
 
   <body>
+<<<<<<< HEAD
     <div class="placeholder hidden"></div>
+=======
+    <div class="placeholder">
+        <!-- <img src="/img/placeholder.gif" alt="placeholder" class="placeholder__img"> -->
+        <p class="placeholder__text">Подождите...</p>
+    </div>
+>>>>>>> 02b4ebbaee6f419b72efc1950d08f74a765498d7
 
     <div class="header clearfix">
         <h1 class="header__title"><?=getTitle($menu)?></h1>

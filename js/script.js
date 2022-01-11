@@ -1,6 +1,7 @@
 
 'use strict';
 
+<<<<<<< HEAD
 var btn = document.querySelector('.card__link');
 var placeholder = document.querySelector('.placeholder');
 
@@ -29,4 +30,15 @@ function removeClass(ele,cls) {
     var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
     ele.className=ele.className.replace(reg,' ');
   }
+=======
+var placeholder = document.querySelector('.placeholder');
+
+
+function startPlaceholder() {
+  placeholder.style.display = 'block';
+
+  setTimeout(function() {
+    document.location.href = '/?photo=yes';
+  } ,500);
+>>>>>>> 02b4ebbaee6f419b72efc1950d08f74a765498d7
 }
