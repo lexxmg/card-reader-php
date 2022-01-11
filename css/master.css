@@ -90,26 +90,13 @@ h1, h2, h3, p, figure {
 /*============================================================*/
 
 .placeholder {
-<<<<<<< HEAD
-=======
   display: none;
 
->>>>>>> 02b4ebbaee6f419b72efc1950d08f74a765498d7
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-<<<<<<< HEAD
-
-  background-color: black;
-
-  opacity: .5;
-}
-
-.hidden {
-  display: none;
-=======
   z-index: 1000;
 
   background-color: #f9f9f9;
@@ -135,5 +122,4 @@ h1, h2, h3, p, figure {
 
   font-size: 20px;
   font-weight: 500;
->>>>>>> 02b4ebbaee6f419b72efc1950d08f74a765498d7
 }
