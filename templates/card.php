@@ -31,15 +31,15 @@
         </div>
 
         <div class="card__btn-container">
-          <a onclick="startPlaceholder(); return false" href="/?photo=yes" class="card__link card-btn">Сделать фото</a>
+          <a onclick="startPlaceholder(event); return false" href="/?photo=yes" class="card__link card-btn">Сделать фото</a>
         </div>
 
         <div class="card__btn-container">
           <?php if ($storage['step'] === 0): ?>
-            <a class="card__link card-btn" href="?card_read=read">Считать карту</a>
+            <a class="card__link card-btn" onclick="startPlaceholder(event); return false" href="?card_read=read">Считать карту</a>
           <?php else: ?>
-            <a class="card__link card-btn" href="?card_read=test">Проверить</a>
-            <a class="card__link card-btn" href="?card_read=end">Готово</a>
+            <a class="card__link card-btn" onclick="startPlaceholder(event); return false" href="?card_read=test">Проверить</a>
+            <a class="card__link card-btn" onclick="startPlaceholder(event); return false" href="?card_read=end">Готово</a>
           <?php endif; ?>
         </div>
     </div>
