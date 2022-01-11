@@ -22,7 +22,7 @@ try:
 
     size_step = 2
     delay = 0.0007 / size_step # 0.0857
-    step_count = 5960 * size_step // 2 // 2
+    step_count = 5960 * size_step
 
     print(step_count)
     #GPIO.setwarnings(False)
@@ -40,27 +40,13 @@ try:
     GPIO.setup(irStop, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
     print("Вращение в лево -> ")
-    for x in range(step_count):
+    for x in range(step_count // 2):
         GPIO.output(STEP, GPIO.HIGH)
         time.sleep(delay)
         GPIO.output(STEP, GPIO.LOW)
         time.sleep(delay)
         #print(x)
-        if GPIO.input(irStop) == GPIO.HIGH:
-            break
 
-
-    #GPIO.wait_for_edge(irStop, GPIO.RISING)
-
-    print("Вращение в право -> ")
-    GPIO.output(DIR, GPIO.HIGH)
-
-    for x in range(step_count):
-        GPIO.output(STEP, GPIO.HIGH)
-        time.sleep(delay)
-        GPIO.output(STEP, GPIO.LOW)
-        time.sleep(delay)
-        #print(x)
         if GPIO.input(irStop) == GPIO.HIGH:
             break
 
