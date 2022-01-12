@@ -5,11 +5,17 @@ var placeholder = document.querySelector('.placeholder');
 
 
 function startPlaceholder(event) {
-  var ev = event || window.event; // get window.event if argument is falsy (in IE)
-  console.log(window.event.attributes);
+  var href = null;
+
+  if (event.target) {
+    href = event.target.attributes.href.nodeValue;
+  } else {
+    href = window.event.srcElement.attributes.href.nodeValue; // get window.event if argument is falsy (in IE)
+  }
+  console.log(href);
   placeholder.style.display = 'block';
 
   setTimeout(function() {
-    document.location.href = ev.target.attributes.href.nodeValue;
+    document.location.href = href;
   } ,500);
 }
