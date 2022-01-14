@@ -6,13 +6,11 @@ try:
     # === Инициализация пинов ===
     GPIO.setmode(GPIO.BCM)
 
-    STOP = 12 # pin 32
     EN = 4   # pin 7
     DIR = 20 # pin 38
     STEP = 21 # pin 40
 
     GPIO.setup([EN, DIR, STEP], GPIO.OUT, initial=0)
-    GPIO.setup(STOP, GPIO.IN, pull_up_down=GPIO.PUD_UP) # Кнопку в режим INPUT, к нулю с подтяжкой к единице
     #GPIO.setwarnings(False) # не выводить предупреждения
 
     all_steps = 5960 # всего шагов на круг
@@ -41,8 +39,6 @@ try:
         GPIO.output(STEP, GPIO.LOW)
         time.sleep(delay)
         #print(x)
-        if GPIO.input(STOP) == GPIO.HIGH:
-            break
 
 except KeyboardInterrupt:
     # ...
