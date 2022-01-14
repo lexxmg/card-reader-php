@@ -33,7 +33,7 @@ try:
     ei = step_count // 8 # восьмушка 1/8
 
     print("Вращение в лево -> ")
-    for x in range(hf):
+    for x in range(hf + 200):
         speed = delay
 
         if x >= qr - 200 and x <= qr + 200:
@@ -48,8 +48,12 @@ try:
         time.sleep(speed)
         #print(x)
 
-        if GPIO.input(STOP) == GPIO.HIGH:
+        if x >= hf - 300 and GPIO.input(STOP) == GPIO.LOW:
+            print('ИК Стоп')
             break
+
+        if x == hf + 200 - 1:
+            print('err ir_stop')
 
 except KeyboardInterrupt:
     # ...
