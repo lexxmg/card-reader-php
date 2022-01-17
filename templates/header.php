@@ -17,8 +17,6 @@
     <link rel="stylesheet" href="/css/menu.css">
     <link rel="stylesheet" href="/css/card.css">
     <link rel="stylesheet" href="/css/settings.css">
-
-    <script src="/js/script.js" defer></script>
   </head>
 
   <body>
