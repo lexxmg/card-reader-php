@@ -146,11 +146,15 @@ function rotateMotor(string $direction = 'right'): string
     $path = $_SERVER['DOCUMENT_ROOT'] . '/python';
 
     if ($direction === 'right') {
-        return shell_exec("sudo python $path/right.py");
+        return shell_exec("sudo python $path/step-motor-right.py");
     }
 
     if ($direction === 'left') {
-        return shell_exec("sudo python $path/left.py");
+        return shell_exec("sudo python $path/step-motor-left.py");
+    }
+
+    if ($direction === 'zerro') {
+        return shell_exec("sudo python $path/step-motor-zerro.py");
     }
 
     if ($direction === 'end') {

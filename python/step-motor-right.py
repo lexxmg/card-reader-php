@@ -30,7 +30,9 @@ try:
     six = step_count // 64 # восьмушка 1/64
 
 
-    print("Вращение в лево -> ")
+    print("Вращение в право -> ")
+    GPIO.output(DIR, GPIO.HIGH)
+
     for x in range(si):
         GPIO.output(STEP, GPIO.HIGH)
         time.sleep(delay)

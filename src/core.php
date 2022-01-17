@@ -70,39 +70,6 @@ if ( isset($_GET['init']) ) {
     exit();
 }
 
-if ( isset($_GET['rotate']) ) {
-    $rotate = $_GET['rotate'];
-
-    if ($rotate === 'right') {
-        $storage['step'] = $storage['step'] + 1;
-
-        setStorage($storage);
-
-        if ($storage['step'] > 3) {
-            $storage['step'] = 0;
-            $storage['count'] = $storage['count'] - 1;
-            $storage['currentCount'] = $storage['currentCount'] - 1;
-
-            setStorage($storage);
-        }
-
-        var_dump( rotateMotor('right') );
-    }
-
-    if ($rotate === 'left') {
-        $storage['step'] = $storage['step'] - 1;
-
-        setStorage($storage);
-
-        if ($storage['step'] < -3) {
-            $storage['step'] = 0;
-            setStorage($storage);
-        }
-
-        var_dump( rotateMotor('left') );
-    }
-}
-
 if ( isset($_GET['card_read']) ) {
     $cardReaed = $_GET['card_read'];
 

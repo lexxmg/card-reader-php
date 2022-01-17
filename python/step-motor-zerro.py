@@ -31,11 +31,14 @@ try:
 
 
     print("Вращение в лево -> ")
-    for x in range(si):
+    for x in range(qr):
         GPIO.output(STEP, GPIO.HIGH)
         time.sleep(delay)
         GPIO.output(STEP, GPIO.LOW)
         time.sleep(delay)
+        if GPIO.input(STOP) == GPIO.LOW:
+            print('ИК Стоп')
+            break
 
 
 except KeyboardInterrupt:

@@ -7,6 +7,22 @@
 
         setStorage($storage);
     }
+
+    if ( isset($_GET['rotate']) ) {
+        $rotate = $_GET['rotate'];
+
+        if ($rotate === 'right') {
+            var_dump( rotateMotor('right') );
+        }
+
+        if ($rotate === 'left') {
+            var_dump( rotateMotor('left') );
+        }
+
+        if ($rotate === 'zerro') {
+            var_dump( rotateMotor('zerro') );
+        }
+    }
 ?>
 
 <h2>Ручное управление</h2>
@@ -54,12 +70,7 @@
 <hr>
 
 <a href="?rotate=left">В лево</a>
+<a href="?rotate=zerro">В лево до ИК-стоп</a>
 <a href="?rotate=right">В право</a>
-<br>
-<a href="?card_read=read">Считать карту</a>
-<br>
-<a href="?card_read=test">Проверить</a>
-<br>
-<a href="?card_read=end">Готово</a>
 <br>
 <a href="?photo=yes">Сделать фото</a>
