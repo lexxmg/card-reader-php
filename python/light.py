@@ -1,3 +1,4 @@
+import config
 import RPi.GPIO as GPIO                 # Импортируем библиотеку по работе с GPIO
 import time                             # Импортируем класс для работы со временем
 import sys, traceback                   # Импортируем библиотеки для обработки исключений
@@ -6,7 +7,7 @@ try:
     # === Инициализация пинов ===
     GPIO.setmode(GPIO.BCM)
 
-    LED=16 # pin 36
+    LED = config.LED
 
     GPIO.setup(LED, GPIO.OUT, initial=0)     # Пины со светодиодом в режим OUTPUT, выключены
 

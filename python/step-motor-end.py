@@ -1,45 +1,44 @@
+import config
 import RPi.GPIO as GPIO                 # Импортируем библиотеку по работе с GPIO
 import time                             # Импортируем класс для работы со временем
 import sys, traceback                   # Импортируем библиотеки для обработки исключений
 
-# GPIO.IN = 1
-# GPIO.OUT = 0
-# GPIO.SPI = 41
-# GPIO.I2C = 42
-# GPIO.HARD_PWM = 43
-# GPIO.SERIAL = 40
-# GPIO.UNKNOWN = -1
 
 try:
     # === Инициализация пинов ===
     GPIO.setmode(GPIO.BCM)
 
-    STOP = 12 # pin 32
-    EN = 4   # pin 7
-    DIR = 20 # pin 38
-    STEP = 21 # pin 40
+    STOP = config.STOP
+    EN = config.EN
+    DIR = config.DIR
+    STEP = config.STEP
 
     GPIO.setup([EN, DIR, STEP], GPIO.OUT, initial=0)
     GPIO.setup(STOP, GPIO.IN, pull_up_down=GPIO.PUD_UP) # Кнопку в режим INPUT, к нулю с подтяжкой к единице
     #GPIO.setwarnings(False) # не выводить предупреждения
 
-    all_steps = 5960 # всего шагов на круг
-    size_step = 2 # деление шага 1/2
+    all_steps = config.ALL_STEPS
+    size_step = config.SIZE_STEP
 
-    delay = 0.0007 / size_step # 0.0857
+    delay = config.DELAY_TO_STEP / size_step
     step_count = all_steps * size_step
     hf = step_count // 2 # половини круга 1/2
     qr = step_count // 4 # четверть круга 1/4
     ei = step_count // 8 # восьмушка 1/8
+    si = step_count // 16 # восьмушка 1/16
+    th = step_count // 32 # восьмушка 1/32
+    six = step_count // 64 # восьмушка 1/64
+
+    lag = six
 
     print("Вращение в лево -> ")
     for x in range(hf + 200):
         speed = delay
 
-        if x >= qr - 200 and x <= qr + 200:
+        if x >= qr - lag and x <= qr + lag:
             speed = delay * 8
 
-        if x >= qr + ei - 200 and x <= qr + ei + 200:
+        if x >= qr + ei - lag and x <= qr + ei + lag:
             speed = delay * 8
 
         GPIO.output(STEP, GPIO.HIGH)
