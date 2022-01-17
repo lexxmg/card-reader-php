@@ -22,7 +22,7 @@
   </head>
 
   <body>
-    <div class="placeholder">
+    <div id="ph" class="placeholder">
         <!-- <img src="/img/placeholder.gif" alt="placeholder" class="placeholder__img"> -->
         <p class="placeholder__text">Подождите...</p>
     </div>

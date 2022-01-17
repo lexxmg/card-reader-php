@@ -1,8 +1,7 @@
 
 'use strict';
 
-var placeholder = document.querySelector('.placeholder');
-
+var placeholder = document.getElementById('ph');
 
 function startPlaceholder(event) {
   var href = null;
@@ -12,7 +11,8 @@ function startPlaceholder(event) {
   } else {
     href = window.event.srcElement.attributes.href.nodeValue; // get window.event if argument is falsy (in IE)
   }
-  console.log(href);
+  //console.log(href);
+  
   placeholder.style.display = 'block';
 
   setTimeout(function() {
