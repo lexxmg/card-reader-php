@@ -13,14 +13,17 @@
 
         if ($rotate === 'right') {
             var_dump( rotateMotor('right') );
+            getPhoto();
         }
 
         if ($rotate === 'left') {
             var_dump( rotateMotor('left') );
+            getPhoto();
         }
 
         if ($rotate === 'zerro') {
             var_dump( rotateMotor('zerro') );
+            getPhoto();
         }
     }
 ?>
@@ -97,5 +100,9 @@
         </td>
     </tr>
 </table>
+
+<div class="settings-img-container">
+    <img class="settings-img-container__img" src="/upload/test.jpg?nocach=<?=time()?>" alt="карта-пропуск">
+</div>
 
 <a href="?photo=yes">Сделать фото</a>

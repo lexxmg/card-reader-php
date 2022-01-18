@@ -102,3 +102,13 @@
 .settings-table__link--right {
   margin-left: auto;
 }
+
+.settings-img-container {
+  margin: 20px 0 0 0;
+}
+
+.settings-img-container__img {
+  display: block;
+
+  width: 100%;
+}
