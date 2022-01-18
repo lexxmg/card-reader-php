@@ -25,13 +25,15 @@
     }
 ?>
 
-<h2>Ручное управление</h2>
+<h2 class="settings-title">Ручное управление</h2>
 
 <a href="?init=on">Установить 0, создать каталоги</a>
 
 <p><?php var_dump( getStorage() )?></p>
 <br>
 <hr>
+
+<h2 class="settings-title">Добавление карт</h2>
 
 <form class="settings__form settings-form" method="post">
     <label class="settings-form__label">Всего карт:
@@ -69,8 +71,31 @@
 
 <hr>
 
-<a href="?rotate=left">В лево</a>
-<a href="?rotate=zerro">В лево до ИК-стоп</a>
-<a href="?rotate=right">В право</a>
-<br>
+<h2 class="settings-title">Управление мотором</h2>
+
+<table class="settings-table">
+    <tr class="settings-table__row">
+        <td class="settings-table__column settings-table__column--left">
+            <a class="settings-table__link settings-table__link--left"
+                onclick="startPlaceholder(event); return false"
+                href="?rotate=left">В лево
+            </a>
+        </td>
+
+        <td class="settings-table__column settings-table__column--centre">
+            <a class="settings-table__link settings-table__link--centre"
+                onclick="startPlaceholder(event); return false"
+                href="?rotate=zerro">В лево до ИК-стоп
+            </a>
+        </td>
+
+        <td class="settings-table__column settings-table__column--right">
+            <a class="settings-table__link settings-table__link--right"
+            onclick="startPlaceholder(event); return false"
+            href="?rotate=right">В право
+            </a>
+        </td>
+    </tr>
+</table>
+
 <a href="?photo=yes">Сделать фото</a>

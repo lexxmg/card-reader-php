@@ -181,7 +181,7 @@ function declOfNum($number, $titles = [])
 }
 
 /**
-* Сделать фото
+* Делает фото, обрезает, распознаёт номер
 * createPhoto()
 */
 function createPhoto()
@@ -197,6 +197,22 @@ function createPhoto()
     image_crop($path, $cutImage, 1210, 360, 600, 100);
 
     shell_exec("sudo tesseract -l rus  --dpi 300 --psm 11 $cutImage /var/www/html/upload/result");
+
+    shell_exec("sudo python $pathPynton/light.py off");
+}
+
+/**
+* Делает фото
+* getPhoto()
+*/
+function getPhoto()
+{
+    $pathPynton = $_SERVER['DOCUMENT_ROOT'] . '/python';
+    $path = $_SERVER['DOCUMENT_ROOT'] . '/upload/test.jpg';
+
+    shell_exec("sudo python $pathPynton/light.py on");
+
+    shell_exec("sudo libcamera-still -n -o $path --width 1920 --height 1080 --shutter 20000 --immediate");
 
     shell_exec("sudo python $pathPynton/light.py off");
 }

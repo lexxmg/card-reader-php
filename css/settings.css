@@ -1,0 +1,104 @@
+.settings-title {
+  margin: 10px 0;
+}
+
+.settings__form {
+
+}
+
+.settings-form {
+
+}
+
+.settings-form__label {
+
+}
+
+.settings-form__input {
+
+}
+
+.settings-form__btn {
+
+}
+
+.settings__form-task {
+
+}
+
+.settings-form-task {
+
+}
+
+.settings-form-task__label {
+
+}
+
+.settings-form-task__input {
+
+}
+
+.settings-form-task__btn {
+
+}
+
+.settings-table {
+  width: 100%;
+
+  border-collapse: collapse;
+}
+
+.settings-table__row {
+
+}
+
+.settings-table__column {
+
+}
+
+.settings-table__column--left {
+  text-align: left;
+}
+
+.settings-table__link {
+  display: block;
+
+  width: 200px;
+  height: 40px;
+
+  border: 1px solid black;
+
+  font-size: 16px;
+  text-align: center;
+
+  line-height: 40px;
+
+  transition: background-color .15s, color .15s;
+}
+
+.settings-table__link:hover {
+  background-color: black;
+  color: #fff;
+
+  transition: background-color .15s, color .15s;
+}
+
+.settings-table__link--left {
+  margin-right: auto;
+}
+
+.settings-table__column--centre {
+  text-align: center;
+}
+
+.settings-table__link--centre {
+  margin: 0 auto;
+}
+
+.settings-table__column--right {
+  text-align: right;
+}
+
+.settings-table__link--right {
+  margin-left: auto;
+}
