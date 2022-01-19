@@ -31,7 +31,7 @@ try:
 
 
     print("Вращение в лево -> ")
-    for x in range(qr):
+    for x in range(hf):
         GPIO.output(STEP, GPIO.HIGH)
         time.sleep(delay)
         GPIO.output(STEP, GPIO.LOW)

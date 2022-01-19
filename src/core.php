@@ -91,5 +91,8 @@ if ( isset($_GET['card_read']) ) {
         $storage['count'] = $storage['count'] - 1;
         $storage['currentCount'] = $storage['currentCount'] - 1;
         setStorage($storage);
+        createPhoto();
+        header('Location: /');
+        exit();
     }
 }
