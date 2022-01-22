@@ -4,6 +4,8 @@
 
 .settings-photo-img-container {
   position: relative;
+  z-index: 1000;
+
   overflow: hidden;
 
   width: 768px;
@@ -17,7 +19,7 @@
 
   max-width: initial;
 
-  margin: -63px 0 0 -1065px;
+  /* margin: -63px 0 0 -1065px; */
 }
 
 .settings-photo-img-container__border {
