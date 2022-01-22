@@ -14,6 +14,11 @@ $menu = [
     [
         'title' => 'Апач',
         'path' => '/route/apache/',
+        'sort' => 3
+    ],
+    [
+        'title' => 'Настройка Фото',
+        'path' => '/route/settings-photo/',
         'sort' => 2
     ]
 ];
