@@ -196,7 +196,7 @@ function createPhoto()
 
     image_crop($path, $cutImage, 1115, 403, 650, 110);
 
-    shell_exec("sudo tesseract -l rus  --dpi 300 --psm 11 $cutImage /var/www/html/upload/result");
+    shell_exec("sudo tesseract -l rus  --dpi 300 --psm 8 $cutImage /var/www/html/upload/result");
 
     shell_exec("sudo python $pathPynton/light.py off");
 }
