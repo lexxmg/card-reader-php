@@ -2,6 +2,38 @@
 
 }
 
+.settings-photo__form {
+
+}
+
+.settings-photo-form {
+
+}
+
+.settings-photo-form__inner {
+  margin: 0 0 10px 0;
+}
+
+.settings-photo-form__label {
+
+}
+
+.settings-photo-form__input {
+
+}
+
+.settings-photo-form__sellect {
+
+}
+
+.settings-photo-form__option {
+
+}
+
+.settings-photo-form__btn {
+
+}
+
 .settings-photo-img-container {
   position: relative;
   z-index: 1000;
@@ -29,8 +61,8 @@
   z-index: 100;
 
   box-sizing: content-box;
-  width: 650px;
-  height: 110px;
+  /* width: 650px;
+  height: 110px; */
 
   border: 2px solid red;
 }
