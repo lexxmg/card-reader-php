@@ -25,8 +25,25 @@ border.style.height = height + 'px';
 
 form.x.value = offsetLeft;
 form.y.value = offsetTop;
+form.width.value = width;
+form.height.value = height;
 
+form.width.addEventListener('input', function() {
+  border.style.width = this.value + 'px';
+});
 
+form.height.addEventListener('input', function() {
+  border.style.height = this.value + 'px';
+});
+//____________________Подумать__________________________________________________
+form.x.addEventListener('input', function() {
+  img.style.marginLeft = (this.value - 50) + 'px';
+});
+
+form.y.addEventListener('input', function() {
+  img.style.marginTop = (this.value - 340) + 'px';
+});
+//______________________________________________________________________________
 photoContainer.addEventListener('mousedown', event => {
   event.preventDefault();
 
