@@ -194,9 +194,9 @@ function createPhoto($offsetLeft = 1115, $offsetTop = 403, $width = 650, $height
 
     shell_exec("sudo libcamera-still -n -o $path --width 1920 --height 1080 --shutter 20000 --immediate");
 
-    image_crop($path, $cutImage, 1115, 403, 650, 110);
+    image_crop($path, $cutImage, $offsetLeft, $offsetTop, $width, $height);
 
-    shell_exec("sudo tesseract -l rus  --dpi 300 --psm 8 $cutImage /var/www/html/upload/result");
+    shell_exec("sudo tesseract -l rus  --dpi 300 --psm $psm $cutImage /var/www/html/upload/result");
 
     shell_exec("sudo python $pathPynton/light.py off");
 }

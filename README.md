@@ -3,6 +3,7 @@
 установить:
   sudo apt-get update
   sudo apt-get install -y tesseract-ocr
+  sudo apt install tesseract-ocr-rus
   ###sudo apt install ocrfeeder tesseract-ocr-rus
   tesseract --version
   sudo apt-get install apache2

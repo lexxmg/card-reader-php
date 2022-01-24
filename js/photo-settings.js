@@ -7,10 +7,10 @@ const photoContainer = document.querySelector('.settings-photo-img-container-js'
       form = document.querySelector('.settings-photo-form');
 
 const psm = 8,
-      offsetLeft = 1115,
-      offsetTop = 403,
-      width = 650,
-      height = 110;
+      offsetLeft = form.x.value,
+      offsetTop = form.y.value,
+      width = form.width.value,
+      height = form.height.value;
 
 let marginLeft = 50 - offsetLeft;
 let marginTop = 340 - offsetTop;
@@ -23,10 +23,10 @@ img.style.marginTop = marginTop + 'px';
 border.style.width = width + 'px';
 border.style.height = height + 'px';
 
-form.x.value = offsetLeft;
-form.y.value = offsetTop;
-form.width.value = width;
-form.height.value = height;
+// form.x.value = offsetLeft;
+// form.y.value = offsetTop;
+// form.width.value = width;
+// form.height.value = height;
 
 form.width.addEventListener('input', function() {
   border.style.width = this.value + 'px';
@@ -90,16 +90,16 @@ function getPosition(event) {
     img.style.marginTop = (-cursorY + marginTop) + 'px';
 }
 
-psmArr.forEach((item, i) => {
-  form.select.insertAdjacentHTML('beforeend',  `
-    <option
-     class="settings-photo-form__option"
-     value="${item.value}"
-     >${item.text}
-    </option>
-  `);
-
-  if (item.value === psm) {
-    form.select.options[i].selected = true;
-  }
-});
+// psmArr.forEach((item, i) => {
+//   form.select.insertAdjacentHTML('beforeend',  `
+//     <option
+//      class="settings-photo-form__option"
+//      value="${item.value}"
+//      >${item.text}
+//     </option>
+//   `);
+//
+//   if (item.value === psm) {
+//     form.select.options[i].selected = true;
+//   }
+// });

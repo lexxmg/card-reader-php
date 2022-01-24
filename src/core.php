@@ -47,7 +47,7 @@ if ( isset($_GET['photo']) ) {
 
     //shell_exec("sudo libcamera-still -n -o $path/upload/test.jpg --width 1920 --height 1080 --shutter 20000 --immediate");
 
-    createPhoto();
+    createPhoto($storage['offsetLeft'], $storage['offsetTop'], $storage['width'], $storage['height'], $storage['psm']);
 
     header('Location: /');
     exit();
@@ -67,8 +67,9 @@ if ( isset($_GET['init']) ) {
         'psm' => 8
     ];
 
-    var_dump( createDir('upload') );
-    var_dump( createDir('storage') );
+    // var_dump($storage);
+    // var_dump( createDir('upload') );
+    // var_dump( createDir('storage') );
     var_dump( setStorage($storage) );
 
     header("Location: $pathURI");
@@ -96,7 +97,7 @@ if ( isset($_GET['card_read']) ) {
         $storage['count'] = $storage['count'] - 1;
         $storage['currentCount'] = $storage['currentCount'] - 1;
         setStorage($storage);
-        createPhoto();
+        createPhoto($storage['offsetLeft'], $storage['offsetTop'], $storage['width'], $storage['height'], $storage['psm']);
         header('Location: /');
         exit();
     }
