@@ -59,7 +59,12 @@ if ( isset($_GET['init']) ) {
     $storage = [
         'step' => 0,
         'currentCount' => 0,
-        'count' => 0
+        'count' => 0, //57
+        'offsetLeft' => 1115,
+        'offsetTop' => 403,
+        'width' => 650,
+        'height' => 110,
+        'psm' => 8
     ];
 
     var_dump( createDir('upload') );

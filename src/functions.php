@@ -184,7 +184,7 @@ function declOfNum($number, $titles = [])
 * Делает фото, обрезает, распознаёт номер
 * createPhoto()
 */
-function createPhoto()
+function createPhoto($offsetLeft = 1115, $offsetTop = 403, $width = 650, $height = 110, $psm = 8)
 {
     $pathPynton = $_SERVER['DOCUMENT_ROOT'] . '/python';
     $path = $_SERVER['DOCUMENT_ROOT'] . '/upload/test.jpg';

@@ -37,11 +37,11 @@ form.height.addEventListener('input', function() {
 });
 //____________________Подумать__________________________________________________
 form.x.addEventListener('input', function() {
-  img.style.marginLeft = (this.value - 50) + 'px';
+  img.style.marginLeft = (50 - this.value) + 'px';
 });
 
 form.y.addEventListener('input', function() {
-  img.style.marginTop = (this.value - 340) + 'px';
+  img.style.marginTop = (340 - this.value) + 'px';
 });
 //______________________________________________________________________________
 photoContainer.addEventListener('mousedown', event => {
