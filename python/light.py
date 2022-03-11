@@ -28,6 +28,6 @@ except:
     print("--- End Exception Data:")
 finally:
     print("CleanUp -> ")                            # Информируем сбросе пинов
-    #GPIO.cleanup()                              # Возвращаем пины в исходное состояние
+    # GPIO.cleanup()                              # Возвращаем пины в исходное состояние
     #pwm.stop()                                  # Останавливаем ШИМ
     print("End of program")                     # Информируем о завершении работы программы

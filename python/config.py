@@ -1,4 +1,4 @@
-EN = 4   # pin 7
+EN = 3   # pin 5
 DIR = 20 # pin 38
 STEP = 21 # pin 40
 STOP = 12 # pin 32 (ИК Датчик)
