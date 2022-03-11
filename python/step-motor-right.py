@@ -51,9 +51,9 @@ except:
     print("--- End Exception Data:")
 finally:
     print("CleanUp -> ")                            # Информируем сбросе пинов
-    GPIO.cleanup()                              # Возвращаем пины в исходное состояние
-    # GPIO.output(STEP, GPIO.LOW)
-    # GPIO.output(DIR, GPIO.LOW)
+    # GPIO.cleanup()                              # Возвращаем пины в исходное состояние
+    GPIO.output(STEP, GPIO.LOW)
+    GPIO.output(DIR, GPIO.LOW)
     # GPIO.output(EN, GPIO.HIGH)
     print("End of program")                     # Информируем о завершении работы программы
     sys.exit()
