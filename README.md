@@ -28,6 +28,7 @@
   sudo chmod +x /var/www/html/bash/right.sh
   sudo chmod 777 /var/www/html/upload
   sudo chmod 777 /var/www/html/storage
+  sudo chmod +x /var/www/html/bash/reboot.sh
 
 Камера:
   включить в конфиге:

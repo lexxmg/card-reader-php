@@ -26,6 +26,32 @@
             getPhoto();
         }
     }
+
+    if ( isset($_GET['power']) ) {
+        $pathURI = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+        $pathBash = $_SERVER['DOCUMENT_ROOT'] . '/bash';
+
+        var_dump($pathURI);
+        $power = $_GET['power'];
+
+        if ($power === 'off') {
+            header("Location: $pathURI");
+
+            sleep(3);
+
+            shell_exec("sudo shutdown now");
+
+            exit();
+        }
+
+        if ($power === 'reboot') {
+            header("Location: $pathURI");
+
+            shell_exec("sudo $pathBash/reboot.sh");
+
+            exit();
+        }
+    }
 ?>
 
 <h2 class="settings-title">Ручное управление</h2>
@@ -106,3 +132,23 @@
 </div>
 
 <a href="?photo=yes">Сделать фото</a>
+
+<h2 class="settings-title">Выключение перезагрузка</h2>
+
+<table class="settings-table">
+    <tr class="settings-table__row">
+        <td class="settings-table__column settings-table__column--left">
+            <a class="settings-table__link settings-table__link--left"
+                onclick="startPlaceholder(event); return false"
+                href="?power=off">Выключить
+            </a>
+        </td>
+
+        <td class="settings-table__column settings-table__column--centre">
+            <a class="settings-table__link settings-table__link--centre"
+                onclick="startPlaceholder(event); return false"
+                href="?power=reboot">Перезагрузить
+            </a>
+        </td>
+    </tr>
+</table>
