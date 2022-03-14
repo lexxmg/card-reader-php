@@ -14,6 +14,7 @@ try:
     LED = config.LED
 
     GPIO.setup([DIR, STEP, LED], GPIO.OUT, initial=0)
+    #GPIO.setwarnings(False)
     GPIO.setup(EN, GPIO.OUT, initial=1)
     GPIO.setup(STOP, GPIO.IN, pull_up_down=GPIO.PUD_UP) # Кнопку в режим INPUT, к нулю с подтяжкой к единице
     #GPIO.setwarnings(False) # не выводить предупреждения

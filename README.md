@@ -19,8 +19,8 @@
 
   sudo nano /etc/rc.local
   добавить строку до exit 0:
-    sudo python /var/www/html/gpio_start.py &
-    ### если нужны логи то: sudo python /var/www/html/gpio_start.py & > /home/pi/PythonScripts/script_log.txt 2>&1
+    sudo python /var/www/html/python/gpio_start.py &
+    ### если нужны логи то: sudo python /var/www/html/python/gpio_start.py & > /home/pi/PythonScripts/script_log.txt 2>&1
 
 использовать:
   tesseract --dpi 300 /var/www/html/upload/num.png /tmp/result   # запишит результат в  /var/www/html/upload/result.txt

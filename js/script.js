@@ -40,7 +40,11 @@ function powerOff(event) {
   }
   xhr.send();
 
-  setTimeout(() => {
-    document.location.href = '/';
-  }, 1000);
+  // setTimeout(() => {
+  //   document.location.href = '/';
+  // }, 1000);
+
+  // setTimeout(() => {
+  //   document.location.reload();
+  // }, 10000);
 }

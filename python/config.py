@@ -1,8 +1,8 @@
-EN = 3   # pin 5
-DIR = 20 # pin 38
-STEP = 21 # pin 40
-STOP = 12 # pin 32 (ИК Датчик)
-LED = 16 # pin 36 (подсветка)
+EN = 13   # pin 33
+DIR = 26 # pin 37
+STEP = 19 # pin 35
+STOP = 5 # pin 29 (ИК Датчик)
+LED = 6 # pin 31 (подсветка)
 
 ALL_STEPS = 13536 # 5960 # всего шагов на круг
 SIZE_STEP = 2 # деление шага 1/2

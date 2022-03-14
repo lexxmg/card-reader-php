@@ -133,14 +133,14 @@
     <tr class="settings-table__row">
         <td class="settings-table__column settings-table__column--left">
             <a class="settings-table__link settings-table__link--left"
-                onclick="powerOff()(event); return false"
+                onclick="powerOff(event); return false"
                 href="?power=off">Выключить
             </a>
         </td>
 
         <td class="settings-table__column settings-table__column--centre">
             <a class="settings-table__link settings-table__link--centre"
-                onclick="powerOff()(event); return false"
+                onclick="powerOff(event); return false"
                 href="?power=reboot">Перезагрузить
             </a>
         </td>

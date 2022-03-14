@@ -15,7 +15,7 @@ try:
 
     GPIO.setup([EN, DIR, STEP], GPIO.OUT, initial=0)
     GPIO.setup(STOP, GPIO.IN, pull_up_down=GPIO.PUD_UP) # Кнопку в режим INPUT, к нулю с подтяжкой к единице
-    #GPIO.setwarnings(False) # не выводить предупреждения
+    # #GPIO.setwarnings(False) # не выводить предупреждения
 
     all_steps = config.ALL_STEPS
     size_step = config.SIZE_STEP
@@ -52,6 +52,6 @@ finally:
     # GPIO.cleanup()                              # Возвращаем пины в исходное состояние
     GPIO.output(STEP, GPIO.LOW)
     GPIO.output(DIR, GPIO.LOW)
-    # GPIO.output(EN, GPIO.HIGH)
+    GPIO.output(EN, GPIO.HIGH)
     print("End of program")                     # Информируем о завершении работы программы
     sys.exit()
