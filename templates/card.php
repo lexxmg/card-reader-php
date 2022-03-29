@@ -39,9 +39,9 @@
             <a class="card__link card-btn" onclick="startPlaceholder(event); return false" href="?card_read=end">Готово</a>
           <?php endif; ?>
         </div>
-    </div>
 
-    <span class="card__number"><?=substr($file[0], 0, 10)?></span>
+        <span class="card__number"><?=substr($file[0], 0, 10)?></span>
+    </div>
 
     <img src="/upload/test.jpg?nocach=<?=time()?>" alt="карта-пропуск" class="card__img-full">
  </main>

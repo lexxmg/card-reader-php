@@ -120,3 +120,53 @@
   line-height: 30px;
   text-align: center;
 }
+
+.card-btn:hover {
+  background-color: black;
+  color: #fff;
+
+  transition: background-color .15s, color .15s;
+}
+
+@media (max-width: 800px) {
+  .card__btn-container {
+    margin: 10px 0 0 0;
+  }
+}
+
+@media (max-width: 630px) {
+  .card__btn-container {
+    margin: 10px 10px 0 0;
+  }
+
+  .card__number {
+    margin: 5px 0 0 5vw;
+
+    font-size: 6.6vw;
+
+    letter-spacing: .97vw;
+  }
+
+  .card__img-container {
+    width: 100%;
+    height: 100%;
+
+    margin: 10px 0 0 0;
+  }
+
+  .card__info {
+    margin: 10px 10px;
+  }
+}
+
+@media (max-width: 420px) {
+  .card-info__count {
+    float: left;
+
+    margin: 0 30px 10px 0;
+  }
+
+  .card__current-task {
+    float: left;
+  }
+}

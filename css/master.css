@@ -123,3 +123,9 @@ h1, h2, h3, p, figure {
   font-size: 20px;
   font-weight: 500;
 }
+
+@media (max-width: 800px) {
+  .fixed-container {
+    max-width: 600px;
+  }
+}
