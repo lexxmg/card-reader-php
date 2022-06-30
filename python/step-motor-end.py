@@ -39,7 +39,7 @@ try:
             speed = delay * 8
 
         if x >= qr + ei - lag and x <= qr + ei + lag:
-            speed = delay * 10
+            speed = delay * 20
 
         GPIO.output(STEP, GPIO.HIGH)
         time.sleep(speed)
